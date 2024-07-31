@@ -1,0 +1,4 @@
+Camiseta;20.50;10
+Calça;50.00;20
+Jaqueta;100.00;30
+Iphone;5000.00;1

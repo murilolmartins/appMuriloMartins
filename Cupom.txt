@@ -1,0 +1,4 @@
+Murilo Martins;Casas Bahia;1000.25;Primeira compra
+João Silva;Apple;500.00;Primeira compra
+Maria Souza;Casas Bahia;200.00;Primeira compra
+Murilo Martins;Extra;75.50;Segunda compra

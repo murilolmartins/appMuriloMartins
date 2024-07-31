@@ -1,0 +1,4 @@
+Pagamento Dinheiro 1;35.50;10.00;25.50
+Pagamento Dinheiro 2;70.00;10.00;60.00
+Pagamento Dinheiro 3;130.00;10.00;120.00
+Pagamento Dinheiro 4;5000.00;10.00;4990.00
