@@ -1,6 +1,8 @@
 package model.domain;
 
 public class Produto {
+
+    private int id;
     private String nome;
     private float valor;
     private int quantidade;
@@ -22,6 +24,14 @@ public class Produto {
         sb.append(this.quantidade);
 
         return sb.toString();
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNome() {

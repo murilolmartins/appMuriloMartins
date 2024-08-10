@@ -1,0 +1,20 @@
+Cupom;Murilo Martins;Casas Bahia;1000.25;Primeira compra
+Produto;Camiseta;20.50;10
+PagamentoDinheiro;Pagamento Dinheiro 1;30.50;10.00;20.50
+Cupom;João Silva;Apple;500.00;Primeira compra
+Produto;Iphone;5000.00;1
+PagamentoDinheiro;Pagamento Dinheiro 2;4000.00;00.00;4000.00
+PagamentoCartao;Pagamento Cartao 1;500.00;Bradesco;2522556588489;True
+PagamentoCartao;Pagamento Cartao 2;500.00;Bradesco;2522556588489;True
+Cupom;Maria Souza;Casas Bahia;200.00;Primeira compra
+Produto;Calça;50.00;20
+PagamentoDinheiro;Pagamento Dinheiro 3;700.00;00.00;700.00
+PagamentoCartao;Pagamento Cartao 3;300.00;Bradesco;2522556588489;True
+Cupom;Murilo Martins;Extra;75.50;Segunda compra
+Produto;Jaqueta;50.00;1
+Produto;Camiseta;20.50;1
+PagamentoDinheiro;Pagamento Dinheiro 4;70.50;00.00;70.50
+PagamentoCartao;Pagamento Cartao 4;5.00;Itau;2522556588489;True
+
+
+

@@ -1,6 +1,8 @@
 package br.edu.infnet.appMuriloMatins;
 
 import model.domain.Produto;
+import model.service.ProdutoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -11,10 +13,14 @@ import java.io.FileReader;
 
 @Component
 public class ProdutoLoader implements ApplicationRunner {
+
+    @Autowired
+    private ProdutoService produtoService;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-        FileReader file = new FileReader("Produto.txt");
+        FileReader file = new FileReader("files/Produto.txt");
 
         BufferedReader reader = new BufferedReader(file);
 
@@ -23,10 +29,10 @@ public class ProdutoLoader implements ApplicationRunner {
 
             var dados = linha.split(";");
 
-            var produto = new Produto(dados[0], Float.parseFloat(dados[1]) ,
+            var produto = new Produto(dados[0], Float.parseFloat(dados[1]),
                     Integer.parseInt(dados[2]));
 
-            System.out.println(produto);
+            produtoService.incluir(produto);
         }
 
         reader.close();

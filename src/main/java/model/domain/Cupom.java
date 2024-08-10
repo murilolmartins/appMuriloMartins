@@ -4,17 +4,28 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Cupom {
+
+    private int id;
     private String cliente;
     private String loja;
     private final String descricao;
     private final float valor;
     private List<Pagamento> pagamentos = new LinkedList<>();
+    private List<Produto> produtos = new LinkedList<>();
 
     public Cupom(String cliente, String loja, float valor, String descricao) {
         this.descricao = descricao;
         this.valor = valor;
         this.cliente = cliente;
         this.loja = loja;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getDescricao() {
@@ -59,6 +70,14 @@ public class Cupom {
         return loja;
     }
 
+    public void setProdutos(Produto produto) {
+        this.produtos.add(produto);
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -70,6 +89,11 @@ public class Cupom {
         sb.append(this.cliente);
         sb.append("; Loja: ");
         sb.append(this.loja);
+        sb.append("\n");
+        sb.append(getProdutos());
+        sb.append("\n");
+        sb.append(getPagamentos());
+
 
         return sb.toString();
     }
