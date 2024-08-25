@@ -1,7 +1,8 @@
 package br.edu.infnet.appMuriloMatins;
 
-import model.domain.Produto;
-import model.service.ProdutoService;
+import br.edu.infnet.appMuriloMatins.model.domain.Cupom;
+import br.edu.infnet.appMuriloMatins.model.domain.Produto;
+import br.edu.infnet.appMuriloMatins.model.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -29,8 +30,14 @@ public class ProdutoLoader implements ApplicationRunner {
 
             var dados = linha.split(";");
 
+            Cupom cupom = new Cupom();
+
+            cupom.setId(Integer.parseInt(dados[3]));
+
             var produto = new Produto(dados[0], Float.parseFloat(dados[1]),
                     Integer.parseInt(dados[2]));
+
+            produto.setCupom(cupom);
 
             produtoService.incluir(produto);
         }

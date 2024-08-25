@@ -1,4 +1,4 @@
-Pagamento Cartao 1;35.50;Banco do Brasil;2522556588489;True
-Pagamento Cartao 2;70.00;Bradesco;2522556588489;True
-Pagamento Cartao 3;130.00;Itaú;2522556588489;False
-Pagamento Cartao 4;5000.00;Nubank;2522556588489;False
+Pagamento Cartao 1;500.00;Bradesco;2522556588489;True;2
+Pagamento Cartao 2;500.00;Bradesco;2522556588489;True;2
+Pagamento Cartao 3;300.00;Bradesco;2522556588489;True;3
+Pagamento Cartao 4;5.00;Itau;2522556588489;True;4

@@ -1,21 +1,21 @@
 package br.edu.infnet.appMuriloMatins;
 
-import model.domain.Cupom;
-import model.domain.PagamentoCartao;
-import model.domain.PagamentoDinheiro;
-import model.domain.Produto;
-import model.service.CupomService;
+import br.edu.infnet.appMuriloMatins.model.domain.Cupom;
+import br.edu.infnet.appMuriloMatins.model.domain.PagamentoCartao;
+import br.edu.infnet.appMuriloMatins.model.domain.PagamentoDinheiro;
+import br.edu.infnet.appMuriloMatins.model.domain.Produto;
+import br.edu.infnet.appMuriloMatins.model.service.CupomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.HashMap;
-import java.util.Map;
 
 @Component
+@Order(1)
 public class CupomLoader implements ApplicationRunner {
 
     @Autowired
@@ -37,6 +37,7 @@ public class CupomLoader implements ApplicationRunner {
 
             switch (dados[0]) {
                 case "Cupom":
+
                     cupom = new Cupom(dados[1], dados[2], Float.valueOf(dados[3]), dados[4]);
 
                     cupomService.incluir(cupom);

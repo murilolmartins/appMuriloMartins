@@ -1,17 +1,40 @@
-package model.domain;
+package br.edu.infnet.appMuriloMatins.model.domain;
+
+import jakarta.persistence.*;
 
 import java.util.LinkedList;
 import java.util.List;
 
+
+@Entity
+@Table(name = "Cupom")
 public class Cupom {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+
     private String cliente;
     private String loja;
-    private final String descricao;
-    private final float valor;
+    private String descricao;
+    private float valor;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @JoinColumn(name = "cupom_id")
     private List<Pagamento> pagamentos = new LinkedList<>();
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @JoinColumn(name = "cupom_id")
     private List<Produto> produtos = new LinkedList<>();
+
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "endereco_id")
+    private Endereco endereco;
+
+    public Cupom() {
+    }
+
 
     public Cupom(String cliente, String loja, float valor, String descricao) {
         this.descricao = descricao;

@@ -1,7 +1,8 @@
 package br.edu.infnet.appMuriloMatins;
 
-import model.domain.PagamentoCartao;
-import model.service.PagamentoCartaoService;
+import br.edu.infnet.appMuriloMatins.model.domain.Cupom;
+import br.edu.infnet.appMuriloMatins.model.domain.PagamentoCartao;
+import br.edu.infnet.appMuriloMatins.model.service.PagamentoCartaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -28,8 +29,14 @@ public class PagamentoCartaoLoader implements ApplicationRunner {
 
             var dados = linha.split(";");
 
+            Cupom cupom = new Cupom();
+
+            cupom.setId(Integer.parseInt(dados[5]));
+
             var pagamentoCartao = new PagamentoCartao(dados[0], Float.parseFloat(dados[1]), dados[2]
                     , dados[3], Boolean.parseBoolean(dados[4]));
+
+            pagamentoCartao.setCupom(cupom);
 
             pagamentoCartaoService.incluir(pagamentoCartao);
 

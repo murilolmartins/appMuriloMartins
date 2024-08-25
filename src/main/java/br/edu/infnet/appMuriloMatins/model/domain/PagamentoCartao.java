@@ -1,10 +1,19 @@
-package model.domain;
+package br.edu.infnet.appMuriloMatins.model.domain;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "PagamentoCartao")
 public class PagamentoCartao extends Pagamento {
 
     private String banco;
     private String numeroCartao;
     private boolean parcelado;
+
+    public PagamentoCartao() {
+    }
 
     public PagamentoCartao(String descricao, float valor, String banco, String numeroCartao,
                            boolean parcelado) {

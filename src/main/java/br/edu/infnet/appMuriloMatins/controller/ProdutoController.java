@@ -1,7 +1,7 @@
 package br.edu.infnet.appMuriloMatins.controller;
 
-import model.domain.Produto;
-import model.service.ProdutoService;
+import br.edu.infnet.appMuriloMatins.model.domain.Produto;
+import br.edu.infnet.appMuriloMatins.model.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

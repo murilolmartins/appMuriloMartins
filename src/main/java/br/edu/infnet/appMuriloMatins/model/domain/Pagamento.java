@@ -1,10 +1,25 @@
-package model.domain;
+package br.edu.infnet.appMuriloMatins.model.domain;
 
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "Pagamento")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Pagamento {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private float valor;
     private String descricao;
+
+    @ManyToOne
+    @JoinColumn(name = "cupom_id")
+    private Cupom cupom;
+
+    public Pagamento() {
+    }
 
     public Pagamento(String descricao, float valor) {
         this.descricao = descricao;
@@ -46,5 +61,12 @@ public abstract class Pagamento {
         this.valor = valor;
     }
 
+    public void setCupom(Cupom cupom) {
+        this.cupom = cupom;
+    }
+
+    public Cupom getCupom() {
+        return cupom;
+    }
 
 }

@@ -5,12 +5,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "model.service")
-@ComponentScan(basePackages = "br.edu.infnet.appMuriloMatins")
+@ComponentScan(basePackages = {
+		"br.edu.infnet.appMuriloMatins.model.domain",
+		"br.edu.infnet.appMuriloMatins.model.repository",
+		"br.edu.infnet.appMuriloMatins.model.service",
+		"br.edu.infnet.appMuriloMatins"
+})
 public class AppMuriloMatinsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AppMuriloMatinsApplication.class, args);
 	}
-
 }

@@ -1,11 +1,26 @@
-package model.domain;
+package br.edu.infnet.appMuriloMatins.model.domain;
 
+import jakarta.persistence.*;
+
+
+@Entity
+@Table(name = "Produto")
 public class Produto {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nome;
     private float valor;
     private int quantidade;
+
+    @ManyToOne
+    @JoinColumn(name = "cupom_id")
+    private Cupom cupom;
+
+    // Default constructor for JPA
+    public Produto() {
+    }
 
     public Produto(String nome, float valor, int quantidade) {
         this.nome = nome;
@@ -42,7 +57,6 @@ public class Produto {
         return valor;
     }
 
-
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -59,4 +73,11 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
+    public void setCupom(Cupom cupom) {
+        this.cupom = cupom;
+    }
+
+    public Cupom getCupom() {
+        return cupom;
+    }
 }
